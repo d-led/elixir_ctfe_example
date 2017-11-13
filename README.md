@@ -7,10 +7,12 @@ An example of embedding file contents at compile time
 ```
 $ mix clean && mix compile
 Compiling 1 file (.ex)
-==== Compile time: priv/embed_this.txt
+==== Reading priv/embed_this.txt at compile time ...
 Generated elixir_ctfe_example app
 $ mix run
-==== Run time: <<< Hello, World! >>>
+==== This is printed at run time: <<< Hello, World! >>>
+$ mix run
+==== This is printed at run time: <<< Hello, World! >>>
 ```
 
 Application source: [application.ex][lib/elixir_ctfe_example/application.ex]
