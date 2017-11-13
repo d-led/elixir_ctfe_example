@@ -4,9 +4,13 @@ defmodule ElixirCtfeExample.Application do
   defmodule Resource do
     def embed do
       filename = "priv/embed_this.txt"
-      IO.puts "==== Reading #{filename} at compile time ..."
-      contents = File.read! filename
-      "<<< #{contents} >>>"
+      contents = File.read!(filename)
+
+      IO.puts "==== Reading #{filename} at compile time ... #{contents}"
+
+      # some parsing
+      resource = contents |> String.split(";") |> Enum.join(", ")
+      "<<< #{resource} >>>"
     end
   end
 
