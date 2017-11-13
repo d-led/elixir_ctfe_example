@@ -15,5 +15,5 @@ $ mix run
 ==== This is printed at run time: <<< Hello, World! >>>
 ```
 
-Application source: [application.ex][lib/elixir_ctfe_example/application.ex]
-Text to embed: [embed_this.txt][priv/embed_this.txt]
+Application source: [application.ex](lib/elixir_ctfe_example/application.ex)
+Text to embed: [embed_this.txt](priv/embed_this.txt)
