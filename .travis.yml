@@ -1,0 +1,7 @@
+language: elixir
+
+script:
+  - echo "-- COMPILE TIME ---------"
+  - mix clean && mix build
+  - echo "---RUN TIME -------------"
+  - mix run
