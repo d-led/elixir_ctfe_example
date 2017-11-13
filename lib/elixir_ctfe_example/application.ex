@@ -4,7 +4,7 @@ defmodule ElixirCtfeExample.Application do
   defmodule Resource do
     def embed do
       filename = "priv/embed_this.txt"
-      IO.puts "==== Compile time: #{filename}"
+      IO.puts "==== Reading #{filename} at compile time ..."
       contents = File.read! filename
       "<<< #{contents} >>>"
     end
@@ -14,7 +14,7 @@ defmodule ElixirCtfeExample.Application do
   @resource Resource.embed()
 
   defp hello_ctfe do
-    IO.puts "==== Run time: #{@resource}"
+    IO.puts "==== This is printed at run time: #{@resource}"
   end
 
   def start(_type, _args) do
