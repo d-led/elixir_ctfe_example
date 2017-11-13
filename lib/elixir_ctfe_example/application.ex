@@ -11,18 +11,16 @@ defmodule ElixirCtfeExample.Application do
   end
 
   # will be embedded at compile time
-  @resource Resource.embed()
+  def greeting, do: unquote(Resource.embed())
 
   defp hello_ctfe do
-    IO.puts "==== This is printed at run time: #{@resource}"
+    IO.puts "==== This is printed at run time: #{greeting()}"
   end
 
   def start(_type, _args) do
     hello_ctfe()
 
-    children = []
-
     opts = [strategy: :one_for_one, name: ElixirCtfeExample.Supervisor]
-    Supervisor.start_link(children, opts)
+    Supervisor.start_link([], opts)
   end
 end
