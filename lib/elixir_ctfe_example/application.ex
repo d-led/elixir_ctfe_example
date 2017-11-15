@@ -22,7 +22,7 @@ defmodule ElixirCtfeExample.Application do
 
   defp hello_ctfe do
     IO.puts "==== This is printed at run time: #{greeting()}"
-    IO.puts "==== This map was embedded at compile time: #{@version.revision}"
+    IO.puts "==== This string was embedded at compile time: #{@version.revision}, but is shown at run time"
   end
 
   def start(_type, _args) do
