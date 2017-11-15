@@ -17,8 +17,12 @@ defmodule ElixirCtfeExample.Application do
   # will be embedded at compile time
   def greeting, do: unquote(Resource.embed())
 
+  # same, but inline
+  @version %{revision: File.read!(".git/refs/heads/master") |> String.trim } |> IO.inspect
+
   defp hello_ctfe do
     IO.puts "==== This is printed at run time: #{greeting()}"
+    IO.puts "==== This map was embedded at compile time: #{@version.revision}"
   end
 
   def start(_type, _args) do
